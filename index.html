@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+	<title>网易新闻</title>
+	<link rel="stylesheet" href="style.css?version=1.3.4" />
+	<script src="jquery-2.1.1.min.js"></script>
+	<script src="iscroll.min.js"></script>
+</head>
+<body >
+
+		<div class="box">
+			
+			<div class="fix_mode">
+				<!-- 头部-->
+				<div class="header">
+					<div class="logo">网易</div>
+					<i class="fa fa-bell-o"></i>
+					<i class="fa fa-ellipsis-v"></i>
+				</div>	
+
+				<!--导航 -->
+				<div class="nav_container">
+					<div class="nav" id="wrapper">
+						<ul class="list1">
+							<li style="border-bottom:3px solid rgb(223,48,49)">
+								<a style="color:rgb(223,48,49)" href="javascript:;">头条</a>
+							</li>
+							<li>
+								<a href="javascript:;">娱乐</a>
+							</li>
+							<li>
+								<a href="javascript:;">热点</a>
+							</li>
+							<li >
+								<a href="javascript:;">财经</a>
+							</li>
+							<li>
+								<a href="javascript:;">科技</a>
+							</li>
+							<li>
+								<a href="javascript:;">段子</a>
+							</li>
+							<li>
+								<a href="javascript:;">原创</a>
+							</li>
+							<li>
+								<a href="javascript:;">政务</a>
+							</li>
+							<li>
+								<a href="javascript:;">画报</a>
+							</li>
+							<li>
+								<a href="javascript:;">互联网</a>
+							</li>
+							<li>
+								<a href="javascript:;">历史</a>
+							</li>
+							<li>
+								<a href="javascript:;">影视</a>
+							</li>
+						</ul>
+
+					</div>
+					<i class="fa fa-chevron-down"></i>
+				</div>	
+			</div>
+			
+			<div class="main">
+				<!--新闻列表 -->
+				<div class="main_news">
+				</div>
+			</div>
+		</div>
+		<script>
+			var myScroll = new IScroll('#wrapper', {
+	            scrollbars: false,
+	            mouseWheel: true,
+	            scrollX:true,
+	            interactiveScrollbars: true,
+	            shrinkScrollbars: 'clip',
+	            fadeScrollbars: true,
+	            preventDefault: false
+	        });
+
+	        $('#wrapper').on('touchmove', function (e) {
+	            e.preventDefault();
+	        });
+
+
+        	$(window).trigger('scroll');
+
+//	        /*点击导航时*/
+	        $('.list1').find('a').on('click',function(){
+	        	$(this).css('color','rgb(223,48,49)').parent().css('border-bottom','3px solid rgb(223,48,49)');
+	        	$(this).parent().siblings().find('a').css('color','#323232');
+	        	$(this).parent().siblings().css('border-bottom','none');
+	        })
+
+		</script>
+</body>
+</html>
